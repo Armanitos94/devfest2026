@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#cbeef7">
+  <title>ДевФест Астрахань 2026</title>
+  <meta name="description" content="ДевФест Астрахань 2026 — конференция для разработчиков, IT-специалистов, студентов и всех, кому интересны современные технологии.">
+
+  <link rel="shortcut icon" sizes="32x32" href="img/icons/favicon.ico">
+  <!-- Bootstrap 3.3.6 — по условию проекта -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body data-spy="scroll" data-target="#mainNav" data-offset="90">
+
+  <nav class="navbar navbar-devfest navbar-fixed-top" id="mainNav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#devfestNav" aria-expanded="false">
+          <span class="sr-only">Открыть меню</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#top" aria-label="ДевФест Астрахань 2026">
+          <img class="nav-logo" src="img/logo.svg" alt="DevFest Astrakhan 2026">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="devfestNav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">О событии</a></li>
+          <li><a href="#speakers">Спикеры</a></li>
+          <li><a href="#schedule">Расписание</a></li>
+          <li><a href="#tickets">Участие</a></li>
+          <li><a href="#history">Как это было</a></li>
+          <li><a href="#location">Место</a></li>
+          <li><a href="#partners">Партнёры</a></li>
+          <li><a href="#organizers">Организаторы</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      <header class="hero hero-v24" id="top">
+    <div class="hero-v24-grid" aria-hidden="true"></div>
+    <div class="hero-v24-cloud hero-v24-cloud-left" aria-hidden="true"></div>
+    <div class="hero-v24-cloud hero-v24-cloud-right" aria-hidden="true"></div>
+    <div class="container hero-v24-content">
+      <div class="row">
+        <div class="col-md-8 hero-v24-copy">
+          <div class="hero-v24-eyebrow">GDG Astrakhan представляет</div>
+          <div class="hero-v24-title-lockup">
+            <div class="hero-v24-title-sign">
+              <span class="hero-v24-brace hero-v24-brace-left" aria-hidden="true">{</span>
+              <h1>ДевФест<br>Астрахань</h1>
+              <span class="hero-v24-brace hero-v24-brace-right" aria-hidden="true">}</span>
+            </div>
+            <span class="hero-v24-year">2026</span>
+          </div>
+          <p class="hero-v24-description">Целый день про технологии, людей и идеи, которые двигают нас вперёд.</p>
+          <div class="hero-v24-actions">
+            <a class="hero-v24-buy" href="#tickets">Купить билет <span aria-hidden="true">↗</span></a>
+            <a class="hero-v24-help" target="_blank" href="https://t.tb.ru/pm_short/32fh0rVqQON">Поддержать нас <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-v24-info" aria-label="Дата, время и место проведения">
+            <div><span class="hero-v24-info-label">Когда</span><strong>21 ноября 2026</strong></div>
+            <div><span class="hero-v24-info-label">Время</span><strong>09:00–19:00</strong></div>
+            <a href="#location"><span class="hero-v24-info-label">Где</span><strong>Астрахань, ул. Ульяновых, 4</strong></a>
+          </div>
+        </div>
+        <div class="col-md-4 hero-v24-graphic" aria-hidden="true">
+          <svg class="hero-v24-flight" viewBox="0 0 430 410" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 359 C109 300 205 294 289 194 C344 131 361 79 400 29" fill="none" stroke="#202124" stroke-width="6" stroke-linecap="round"/>
+            <path d="M367 42 L401 27 L398 63" fill="none" stroke="#202124" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <g transform="translate(191 125) rotate(36)" stroke="#202124" stroke-width="5" stroke-linejoin="round">
+              <path d="M0 -72 C34 -47 39 1 35 57 L0 81 -35 57 C-39 1 -34 -47 0 -72z" fill="#ffffff"/>
+              <path d="M0 -72 C16 -59 27 -41 32 -25 L-32 -25 C-27 -41 -16 -59 0 -72z" fill="#ff609f"/>
+              <circle cx="0" cy="-1" r="16" fill="#75bcf7"/>
+              <path d="M-35 25 L-60 59 -31 48z" fill="#ff609f"/>
+              <path d="M35 25 L60 59 31 48z" fill="#ff609f"/>
+              <path d="M-13 78 L0 111 13 78" fill="#fbbc04"/>
+              <path d="M-7 87 L0 129 7 87" fill="#ff923e"/>
+            </g>
+          </svg>
+          <div class="hero-v24-star hero-v24-star-one">✦</div>
+          <div class="hero-v24-star hero-v24-star-two">✦</div>
+          <div class="hero-v24-star hero-v24-star-three">✦</div>
+          <div class="hero-v24-event-chip"><b>12</b> спикеров <span>•</span> <b>2</b> трека</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="section section-light" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="section-kicker">01 / О событии</div>
+            <h2 class="section-title">Один день.<br>Два трека.<br>Много идей.</h2>
+          </div>
+          <div class="col-md-7">
+            <div class="about-card">
+              <p class="lead-copy">ДевФест – это глобальное событие, проводимое по всему миру сообществами GDG. В рамках данного события происходит представление и обсуждение последних технологий и разработок в сфере ИТ. Это мероприятие будет интересно разработчикам, ИТ-специалистам, студентам ИТ-специальностей и всем, кто неравнодушен к современным технологиям. В нашем регионе мероприятие будет проходить в восьмой раз.</p>
+              <div class="row about-stats">
+                <div class="col-xs-6 col-sm-3"><div class="stat"><b>12</b><span>спикеров</span></div></div>
+                <div class="col-xs-6 col-sm-3"><div class="stat"><b>2</b><span>трека</span></div></div>
+                <div class="col-xs-6 col-sm-3"><div class="stat"><b>8+</b><span>часов</span></div></div>
+                <div class="col-xs-6 col-sm-3"><div class="stat"><b>∞</b><span>нетворкинга</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark speakers-section" id="speakers">
+      <div class="container">
+        <div class="section-head row">
+          <div class="col-md-7">
+            <div class="section-kicker light">02 / Спикеры</div>
+            <h2 class="section-title light">12 голосов<br>из индустрии</h2>
+          </div>
+          <div class="col-md-5 text-md-right">
+            <div class="speaker-filters btn-group" role="group" aria-label="Фильтр спикеров">
+              <button class="btn active" data-filter="all">Все</button>
+              <button class="btn" data-filter="hard">Hard Skills</button>
+              <button class="btn" data-filter="soft">Soft Skills</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row speaker-grid">
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="hard">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Александр Белькевич" data-role="Senior разработчик · EMCD Tech LTD" data-city="Астрахань" data-talk="Искусственный интеллект в жизни разработчика: друг или враг?" data-track-name="Soft Skills" data-description="Практический взгляд на то, как разработчику использовать ИИ в ежедневной работе, где он действительно помогает и где создаёт новые риски." class="speaker-card">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/belkevich.png" alt="Александр Белькевич"></div>
+              <span class="track track-hard">Hard Skills</span><h3>Александр Белькевич</h3><p>Senior разработчик · EMCD Tech LTD</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="soft">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Александр Устиченко" data-role="Team Lead · Т-Банк" data-city="Астрахань" data-talk="От хаоса к порядку: как задачи находят своё место в бэклоге" data-track-name="Soft Skills" data-description="О том, как превращать поток входящих запросов в управляемый бэклог и принимать понятные продуктовые и командные решения." class="speaker-card accent-cream">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/ustichenko.png" alt="Александр Устиченко"></div>
+              <span class="track track-soft">Soft Skills</span><h3>Александр Устиченко</h3><p>Team Lead · Т-Банк</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="hard">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Кирилл Левченко" data-role="SRE · Dodo Engineering" data-city="Москва" data-talk="Kubernetes и операторы: автоматизация, которую вы искали" data-track-name="Hard Skills" data-description="Разбираемся, зачем нужны Kubernetes Operators, где они экономят ручную работу и как автоматизировать типовые операции в кластере." class="speaker-card accent-blue">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/levchenko.png" alt="Кирилл Левченко"></div>
+              <span class="track track-hard">Hard Skills</span><h3>Кирилл Левченко</h3><p>SRE · Dodo Engineering</p><small>Москва</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="soft">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Валерий Лаптев" data-role="Программист · Digital Spirit" data-city="Астрахань" data-talk="Программист — кто он? Правда о soft skills" data-track-name="Soft Skills" data-description="Почему технических навыков недостаточно: коммуникация, ответственность, ожидания команды и навыки, которые реально влияют на карьеру." class="speaker-card accent-orange">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/laptev.png" alt="Валерий Лаптев"></div>
+              <span class="track track-soft">Soft Skills</span><h3>Валерий Лаптев</h3><p>Программист · Digital Spirit</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="hard">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Евгений Шигаев" data-role="CEO · Codderz" data-city="Астрахань" data-talk="Тест бэкенда: как начать тестировать свой код и не бросить (Laravel Edition)" data-track-name="Hard Skills" data-description="Пошаговый разговор о том, как начать покрывать backend тестами и встроить тестирование в повседневную разработку." class="speaker-card">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/shigaev.png" alt="Евгений Шигаев"></div>
+              <span class="track track-hard">Hard Skills</span><h3>Евгений Шигаев</h3><p>CEO · Codderz</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="soft">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Екатерина Горбачева" data-role="Руководитель HR-направления · Бест" data-city="Астрахань" data-talk="Ритуалы мотивации в IT: шаманство или рабочая стратегия?" data-track-name="Soft Skills" data-description="Что на самом деле мотивирует специалистов, какие практики работают в командах и где заканчиваются полезные ритуалы." class="speaker-card accent-cream">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/gorbacheva.png" alt="Екатерина Горбачева"></div>
+              <span class="track track-soft">Soft Skills</span><h3>Екатерина Горбачева</h3><p>Руководитель HR-направления · Бест</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="soft">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Александр Морозов" data-role="CTO · Adeptik" data-city="Астрахань" data-talk="Неуверенный доклад об искусственном интеллекте" data-track-name="Hard Skills" data-description="Разговор без хайпа о возможностях ИИ, ограничениях современных инструментов и о том, как здраво оценивать новые технологии." class="speaker-card accent-blue">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/morozov.png" alt="Александр Морозов"></div>
+              <span class="track track-soft">Soft Skills</span><h3>Александр Морозов</h3><p>CTO · Adeptik</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="hard">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Ренат Мусаев" data-role="Разработчик ПО · Drive2" data-city="Астрахань" data-talk="Погружаемся в поток: как устроены параллелизм и асинхронность, кто виноват и что делать прикладному разработчику?" data-track-name="Hard Skills" data-description="На примерах разбираем конкурентность, параллелизм и асинхронность: где возникают проблемы и какие модели помогают их решать." class="speaker-card accent-orange">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/musaev.png" alt="Ренат Мусаев"></div>
+              <span class="track track-hard">Hard Skills</span><h3>Ренат Мусаев</h3><p>Разработчик ПО · Drive2</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="hard">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Алена Мичурина" data-role="Junior Fullstack Developer" data-city="Москва" data-talk="Магия анимаций в SwiftUI: от простого к сложному" data-track-name="Hard Skills" data-description="От базовых переходов до составных анимаций в SwiftUI — с акцентом на понятные принципы и практические приёмы." class="speaker-card">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/michurina.png" alt="Алена Мичурина"></div>
+              <span class="track track-hard">Hard Skills</span><h3>Алена Мичурина</h3><p>Junior Fullstack Developer</p><small>Москва</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="soft">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Артем Ушанов" data-role="Руководитель финансовых проектов · Самолет Плюс" data-city="Астрахань" data-talk="Кольцо Всевластья для продакта: почему экономика продукта важнее всего остального" data-track-name="Soft Skills" data-description="Как продуктовые решения связаны с экономикой и почему юнит-экономика помогает выбирать то, что действительно стоит делать." class="speaker-card accent-cream">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/ushanov.png" alt="Артем Ушанов"></div>
+              <span class="track track-soft">Soft Skills</span><h3>Артем Ушанов</h3><p>Руководитель финансовых проектов · Самолет Плюс</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="hard">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Юрий Яровой" data-role="Старший программист · Positive Technologies" data-city="Астрахань" data-talk="Алгоритмы против хакеров: как предсказать атаку?" data-track-name="Hard Skills" data-description="Как алгоритмы и данные помогают искать признаки атак, оценивать риски и усиливать защиту до того, как инцидент случился." class="speaker-card accent-blue">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/yarovoy.png" alt="Юрий Яровой"></div>
+              <span class="track track-hard">Hard Skills</span><h3>Юрий Яровой</h3><p>Старший программист · Positive Technologies</p><small>Астрахань</small>
+            </article>
+          </div>
+          <div class="col-sm-6 col-md-4 speaker-item" data-track="soft">
+            <article data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Евгений Эрман" data-role="Директор по цифровизации · ДК «РАЗУМ»" data-city="Астрахань" data-talk="Правительство на другой планете живет, родной! Как устранить разрыв между руководством и ИТ-командой" data-track-name="Soft Skills" data-description="Почему бизнес и IT часто говорят на разных языках и какие практики помогают согласовать ожидания, цели и ответственность." class="speaker-card accent-orange">
+              <div class="speaker-photo"><img src="https://devfest2024.gdgastra.ru/assets/img/speakers/erman.png" alt="Евгений Эрман"></div>
+              <span class="track track-soft">Soft Skills</span><h3>Евгений Эрман</h3><p>Директор по цифровизации · ДК «РАЗУМ»</p><small>Астрахань</small>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-yellow" id="schedule">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="section-kicker">03 / Расписание</div>
+            <h2 class="section-title">21 ноября.<br>Два потока.</h2>
+          </div>
+          <div class="col-md-8">
+            <div class="schedule-board">
+              <div class="schedule-head row hidden-xs">
+                <div class="col-sm-2">Время</div><div class="col-sm-5">Hard Skills</div><div class="col-sm-5">Soft Skills</div>
+              </div>
+
+              <div class="schedule-row shared row">
+                <div class="col-sm-2 time">09:00</div><div class="col-sm-10"><b>Регистрация участников</b><span>Приветственный кофе, знакомство и общение</span></div>
+              </div>
+              <div class="schedule-row shared row">
+                <div class="col-sm-2 time">10:00</div><div class="col-sm-10"><b>Официальное открытие DevFest Astrakhan 2026</b><span>Приветствие организаторов, партнёров и сообщества</span></div>
+              </div>
+              <div class="schedule-row row">
+                <div class="col-sm-2 time">11:00</div>
+                <div class="col-sm-5 slot hard" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Кирилл Левченко" data-role="SRE · Dodo Engineering" data-city="Москва" data-talk="Kubernetes и операторы: автоматизация, которую вы искали" data-track-name="Hard Skills" data-description="Разбираемся, зачем нужны Kubernetes Operators, где они экономят ручную работу и как автоматизировать типовые операции в кластере."><em>Hard</em><b>Kubernetes и операторы: автоматизация, которую вы искали</b><span>Кирилл Левченко</span></div>
+                <div class="col-sm-5 slot soft" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Артем Ушанов" data-role="Руководитель финансовых проектов · Самолет Плюс" data-city="Астрахань" data-talk="Кольцо Всевластья для продакта: почему экономика продукта важнее всего остального" data-track-name="Soft Skills" data-description="Как продуктовые решения связаны с экономикой и почему юнит-экономика помогает выбирать то, что действительно стоит делать."><em>Soft</em><b>Кольцо Всевластья для продакта: почему экономика продукта важнее всего остального</b><span>Артем Ушанов</span></div>
+              </div>
+              <div class="schedule-row row">
+                <div class="col-sm-2 time">12:00</div>
+                <div class="col-sm-5 slot hard" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Евгений Шигаев" data-role="CEO · Codderz" data-city="Астрахань" data-talk="Тест бэкенда: как начать тестировать свой код и не бросить" data-track-name="Hard Skills" data-description="Пошаговый разговор о том, как начать покрывать backend тестами и встроить тестирование в повседневную разработку."><em>Hard</em><b>Тест бэкенда: как начать тестировать свой код и не бросить</b><span>Евгений Шигаев</span></div>
+                <div class="col-sm-5 slot soft" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Екатерина Горбачева" data-role="Руководитель HR-направления · Бест" data-city="Астрахань" data-talk="Ритуалы мотивации в IT: шаманство или рабочая стратегия?" data-track-name="Soft Skills" data-description="Что на самом деле мотивирует специалистов, какие практики работают в командах и где заканчиваются полезные ритуалы."><em>Soft</em><b>Ритуалы мотивации в IT: шаманство или рабочая стратегия?</b><span>Екатерина Горбачева</span></div>
+              </div>
+              <div class="schedule-row shared row">
+                <div class="col-sm-2 time">12:40</div><div class="col-sm-10"><b>Обед</b><span>Перерыв и нетворкинг</span></div>
+              </div>
+              <div class="schedule-row row">
+                <div class="col-sm-2 time">14:00</div>
+                <div class="col-sm-5 slot hard" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Александр Морозов" data-role="CTO · Adeptik" data-city="Астрахань" data-talk="Неуверенный доклад об искусственном интеллекте" data-track-name="Hard Skills" data-description="Разговор без хайпа о возможностях ИИ, ограничениях современных инструментов и о том, как здраво оценивать новые технологии."><em>Hard</em><b>Неуверенный доклад об искусственном интеллекте</b><span>Александр Морозов</span></div>
+                <div class="col-sm-5 slot soft" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Евгений Эрман" data-role="Директор по цифровизации · ДК «РАЗУМ»" data-city="Астрахань" data-talk="Как устранить разрыв между руководством и IT-командой" data-track-name="Soft Skills" data-description="Почему бизнес и IT часто говорят на разных языках и какие практики помогают согласовать ожидания, цели и ответственность."><em>Soft</em><b>Как устранить разрыв между руководством и IT-командой</b><span>Евгений Эрман</span></div>
+              </div>
+              <div class="schedule-row row">
+                <div class="col-sm-2 time">15:00</div>
+                <div class="col-sm-5 slot hard" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Юрий Яровой" data-role="Старший программист · Positive Technologies" data-city="Астрахань" data-talk="Алгоритмы против хакеров: как предсказать атаку?" data-track-name="Hard Skills" data-description="Как алгоритмы и данные помогают искать признаки атак, оценивать риски и усиливать защиту до того, как инцидент случился."><em>Hard</em><b>Алгоритмы против хакеров: как предсказать атаку?</b><span>Юрий Яровой</span></div>
+                <div class="col-sm-5 slot soft" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Александр Устиченко" data-role="Team Lead · Т-Банк" data-city="Астрахань" data-talk="От хаоса к порядку: как задачи находят своё место в бэклоге" data-track-name="Soft Skills" data-description="О том, как превращать поток входящих запросов в управляемый бэклог и принимать понятные продуктовые и командные решения."><em>Soft</em><b>От хаоса к порядку: как задачи находят своё место в бэклоге</b><span>Александр Устиченко</span></div>
+              </div>
+              <div class="schedule-row shared row">
+                <div class="col-sm-2 time">15:40</div><div class="col-sm-10"><b>Кофе-брейк</b><span>Перезаряжаемся и продолжаем</span></div>
+              </div>
+              <div class="schedule-row row">
+                <div class="col-sm-2 time">16:10</div>
+                <div class="col-sm-5 slot hard" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Ренат Мусаев" data-role="Разработчик ПО · Drive2" data-city="Астрахань" data-talk="Параллелизм и асинхронность: кто виноват и что делать" data-track-name="Hard Skills" data-description="На примерах разбираем конкурентность, параллелизм и асинхронность: где возникают проблемы и какие модели помогают их решать."><em>Hard</em><b>Параллелизм и асинхронность: кто виноват и что делать</b><span>Ренат Мусаев</span></div>
+                <div class="col-sm-5 slot soft" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Александр Белькевич" data-role="Senior разработчик · EMCD Tech LTD" data-city="Астрахань" data-talk="Искусственный интеллект в жизни разработчика: друг или враг?" data-track-name="Soft Skills" data-description="Практический взгляд на то, как разработчику использовать ИИ в ежедневной работе, где он действительно помогает и где создаёт новые риски."><em>Soft</em><b>Искусственный интеллект в жизни разработчика: друг или враг?</b><span>Александр Белькевич</span></div>
+              </div>
+              <div class="schedule-row row">
+                <div class="col-sm-2 time">17:10</div>
+                <div class="col-sm-5 slot hard" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Алена Мичурина" data-role="Junior Fullstack Developer" data-city="Москва" data-talk="Магия анимаций в SwiftUI: от простого к сложному" data-track-name="Hard Skills" data-description="От базовых переходов до составных анимаций в SwiftUI — с акцентом на понятные принципы и практические приёмы."><em>Hard</em><b>Магия анимаций в SwiftUI: от простого к сложному</b><span>Алена Мичурина</span></div>
+                <div class="col-sm-5 slot soft" data-toggle="modal" data-target="#talkModal" tabindex="0" role="button" data-speaker="Валерий Лаптев" data-role="Программист · Digital Spirit" data-city="Астрахань" data-talk="Программист — кто он? Правда о soft skills" data-track-name="Soft Skills" data-description="Почему технических навыков недостаточно: коммуникация, ответственность, ожидания команды и навыки, которые реально влияют на карьеру."><em>Soft</em><b>Программист — кто он? Правда о soft skills</b><span>Валерий Лаптев</span></div>
+              </div>
+              <div class="schedule-row shared row">
+                <div class="col-sm-2 time">18:00</div><div class="col-sm-10"><b>Закрытие конференции</b><span>Подведение итогов DevFest Astrakhan 2026</span></div>
+              </div>
+              <div class="schedule-row shared row last">
+                <div class="col-sm-2 time">18:10</div><div class="col-sm-10"><b>Afterparty & Networking</b><span>Общаемся без сцены и слайдов</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light tickets-section" id="tickets">
+      <div class="container">
+        <div class="row tickets-heading">
+          <div class="col-md-5">
+            <div class="section-kicker">04 / Билеты</div>
+            <h2 class="section-title">Регистрация<br>открыта.</h2>
+          </div>
+          <div class="col-md-7">
+            <div class="tickets-intro">
+              <span class="registration-live"><i></i> регистрация открыта</span>
+              <p>DevFest Astrakhan пройдёт <strong>21 ноября 2026</strong>. Для всех студентов действует скидка в <strong>50 % на любой билет</strong>. Для этого необходимо заполнить форму и прикрепить документ, подтверждающий статус студента (студенческий билет, зачётную книжку или справку из учебного заведения). После подтверждения промокод на скидку придёт на адрес электронной почты.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row ticket-grid">
+          <div class="col-sm-4">
+            <article class="price-ticket ticket-junior">
+              <div class="ticket-topline"><span>01</span><b>Junior</b></div>
+              <h3>Участник</h3>
+              <ul>
+                <li>Все доклады конференции</li>
+                <li>Безлимитный кофе</li>
+                <li>Перекусы и обед</li>
+                <li>Набор участника</li>
+              </ul>
+              <div class="ticket-prices">
+                <div><small>Обычная цена</small><strong>1 500 ₽</strong></div>
+                <div class="student-price"><small>Студентам −50%</small><strong>1 050 ₽</strong></div>
+              </div>
+              <div class="ticket-actions">
+                <button class="btn btn-devfest ticket-buy" onclick="showEventsNhForm('https://events.nethouse.ru/buy_tickets/176477')" data-preloaded-form>Купить</button>
+                <button class="btn btn-promo ticket-promo" data-toggle="modal" data-target="#promoModal" data-ticket="Junior">Получить промокод</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-4">
+            <article class="price-ticket ticket-middle featured">
+              <div class="ticket-ribbon">POPULAR</div>
+              <div class="ticket-topline"><span>02</span><b>Middle</b></div>
+              <h3>С мерчем</h3>
+              <ul>
+                <li>Все доклады конференции</li>
+                <li>Безлимитный кофе</li>
+                <li>Перекусы и обед</li>
+                <li>Набор участника</li>
+                <li>Один товар из офлайн магазина DevFest (кружка)</li>
+              </ul>
+              <div class="ticket-prices">
+                <div><small>Обычная цена</small><strong>2 500 ₽</strong></div>
+                <div class="student-price"><small>Студентам −50%</small><strong>1 750 ₽</strong></div>
+              </div>
+              <div class="ticket-actions">
+                <button class="btn btn-devfest ticket-buy" onclick="showEventsNhForm('https://events.nethouse.ru/buy_tickets/176477')" data-preloaded-form>Купить</button>
+                <button class="btn btn-promo ticket-promo" data-toggle="modal" data-target="#promoModal" data-ticket="Middle">Получить промокод</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-4">
+            <article class="price-ticket ticket-senior">
+              <div class="ticket-topline"><span>03</span><b>Senior</b></div>
+              <h3>VIP</h3>
+              <ul>
+                <li>Все доклады конференции</li>
+                <li>Безлимитный кофе</li>
+                <li>Перекусы и обед</li>
+                <li>Набор участника</li>
+                <li>VIP — регистрация (отдельная стойка)</li>
+                <li>Бейджи категории «VIP»</li>
+                <li>Три товара из офлайн магазина DevFest (кружка, футболка, флешка)</li>
+              </ul>
+              <div class="ticket-prices">
+                <div><small>Обычная цена</small><strong>5 000 ₽</strong></div>
+                <div class="student-price"><small>Студентам −50%</small><strong>3 500 ₽</strong></div>
+              </div>
+              <div class="ticket-actions">
+                <button class="btn btn-devfest ticket-buy" onclick="showEventsNhForm('https://events.nethouse.ru/buy_tickets/176477')" data-preloaded-form>Купить</button>
+                <button class="btn btn-promo ticket-promo" data-toggle="modal" data-target="#promoModal" data-ticket="Senior">Получить промокод</button>
+              </div>
+            </article>
+          </div>
+        </div>
+    </section>
+
+
+    <section class="section history-section" id="history">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="section-kicker">05 / Как это было</div>
+            <h2 class="section-title">ДевФест<br>вживую.</h2>
+            <p class="history-copy">Видео с ДевФест Астрахань 2025 и фотографии с мероприятия 2025 года — чтобы сразу почувствовать атмосферу.</p>
+          </div>
+          <div class="col-md-7">
+            <div class="video-feature"><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://vk.ru/video_ext.php?oid=-160444032&id=456239050" allowfullscreen title="ДевФест Астрахань 2025"></iframe></div></div>
+          </div>
+        </div>
+
+        <div class="gallery-fullbleed" aria-label="Фотографии ДевФест 2025">
+          <button class="gallery-edge gallery-prev" type="button" aria-label="Предыдущие фотографии">←</button>
+          <div class="gallery-viewport" id="photoGallery">
+            <div class="gallery-strip">
+              <button class="gallery-slide" type="button" data-full="img/gallery/01.jpg"><img src="img/gallery/01.jpg" alt="ДевФест 2025 · фото 1"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/02.jpg"><img src="img/gallery/02.jpg" alt="ДевФест 2025 · фото 2"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/03.jpg"><img src="img/gallery/03.jpg" alt="ДевФест 2025 · фото 3"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/04.jpg"><img src="img/gallery/04.jpg" alt="ДевФест 2025 · фото 4"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/05.jpg"><img src="img/gallery/05.jpg" alt="ДевФест 2025 · фото 5"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/06.jpg"><img src="img/gallery/06.jpg" alt="ДевФест 2025 · фото 6"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/07.jpg"><img src="img/gallery/07.jpg" alt="ДевФест 2025 · фото 7"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/08.jpg"><img src="img/gallery/08.jpg" alt="ДевФест 2025 · фото 8"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/09.jpg"><img src="img/gallery/09.jpg" alt="ДевФест 2025 · фото 9"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/10.jpg"><img src="img/gallery/10.jpg" alt="ДевФест 2025 · фото 10"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/11.jpg"><img src="img/gallery/11.jpg" alt="ДевФест 2025 · фото 11"></button>
+              <button class="gallery-slide" type="button" data-full="img/gallery/12.jpg"><img src="img/gallery/12.jpg" alt="ДевФест 2025 · фото 12"></button>
+            </div>
+          </div>
+          <button class="gallery-edge gallery-next" type="button" aria-label="Следующие фотографии">→</button>
+          <div class="gallery-dots" aria-label="Навигация по фотографиям"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue" id="location">
+      <div class="container">
+        <div class="row location-row">
+          <div class="col-md-7">
+            <div class="section-kicker light">06 / Локация</div>
+            <h2 class="section-title light">Астрахань</h2>
+            <p class="location-copy"><strong>Институт развития образования «ПЛАТФОРМА»</strong><br>г. Астрахань, ул. Ульяновых, 4.</p>
+            <div class="location-tags"><span>21 ноября 2026</span><span>09:00–19:00</span><span>2 трека</span></div>
+            <a class="btn btn-devfest location-map-link" href="https://yandex.ru/maps/?ll=48.033547%2C46.354593&z=17&pt=48.033547%2C46.354593%2Cpm2rdm" target="_blank" rel="noopener">Открыть в картах</a>
+          </div>
+          <div class="col-md-5">
+            <div class="map-card map-card-clean">
+              <div class="map-frame-wrap">
+                <div id="devfestMap" class="devfest-map" role="application" aria-label="Интерактивная карта площадки DevFest: Астрахань, улица Ульяновых, 4"></div>
+                <div class="map-address-sticker" aria-hidden="true">
+                  <strong>Астрахань</strong>
+                  <span>ул. Ульяновых, 4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partners-section" id="partners">
+      <div class="container">
+        <div class="row partners-top">
+          <div class="col-md-5">
+            <div class="section-kicker">07 / Партнёры</div>
+            <h2 class="section-title">Делаем<br>DevFest вместе.</h2>
+          </div>
+          <div class="col-md-7">
+            <div class="partners-copy-card">
+              <p>Партнёры помогают делать конференцию больше: поддерживают площадку, подарки участникам, кофе-брейки и активности.</p>
+              <a class="btn btn-devfest" href="devfest2026.pdf" target="_blank" rel="noopener">Стать партнёром</a>
+            </div>
+          </div>
+        </div>
+        <div class="partner-logo-grid" aria-label="Партнёры ДевФест Астрахань 2026">
+          <div class="partner-logo-slot partner-logo-image">
+            <a href="https://fadm.gov.ru/directions/grant/" target="_blank"><img src="img/partners/01.png" alt="Росмолодежь.Гранты"></a>
+          </div>
+          <div class="partner-logo-slot partner-logo-image">
+            <a href="https://platforma.institute/" target="_blank"><img src="img/partners/02.png" alt="Институт «ПЛАТФОРМА»"></a>
+          </div>
+          <div class="partner-logo-slot partner-logo-image">
+            <a href="https://digital-spirit.ru/" target="_blank"><img src="img/partners/03.png" alt="Digital Spirit»"></a>
+          </div>
+          <div class="partner-logo-slot partner-logo-image">
+            <a href="https://astra-best.ru/" target="_blank"><img src="img/partners/04.png" alt="Бест Софт"></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section organizers-section" id="organizers">
+      <div class="container">
+        <div class="row organizers-intro">
+          <div class="col-md-5">
+            <div class="section-kicker">08 / Организаторы</div>
+            <h2 class="section-title">Кто делает<br>ДевФест Астрахань 2026.</h2>
+          </div>
+          <div class="col-md-7">
+            <p class="organizers-lead">ДевФест в Астрахани делает локальное ИТ-сообщество. Мы собираем программу, спикеров, партнёров и всё, что происходит на площадке 21 ноября.</p>
+          </div>
+        </div>
+
+        <div class="organizer-card-main">
+          <div class="organizer-badge">ОРГАНИЗАТОР</div>
+          <div class="organizer-card-brand">
+            <img class="img-responsive" src="img/partners/gdgastrakhan.png">
+          </div>
+          <div class="organizer-card-copy">
+            <p>Сообщество разработчиков и людей, которым интересны технологии. Проводим митапы, конференции и другие события для локального ИТ-сообщества.</p>
+            <a href="http://gdgastra.ru/" target="_blank" class="organizer-link">GDG Astrakhan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <div class="modal fade photo-modal" id="photoModal" tabindex="-1" role="dialog" aria-label="Просмотр фотографии">
+    <div class="modal-dialog modal-lg" role="document"><div class="modal-content">
+      <button type="button" class="photo-modal-close" data-dismiss="modal" aria-label="Закрыть">×</button>
+      <button type="button" class="photo-modal-nav photo-modal-prev" aria-label="Предыдущее фото">←</button>
+      <img id="photoModalImage" src="" alt="Фотография ДевФест 2025">
+      <button type="button" class="photo-modal-nav photo-modal-next" aria-label="Следующее фото">→</button>
+    </div></div>
+  </div>
+
+  <div class="modal fade talk-modal" id="talkModal" tabindex="-1" role="dialog" aria-labelledby="talkModalTitle">
+    <div class="modal-dialog modal-lg" role="document"><div class="modal-content">
+      <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">×</span></button><span class="modal-kicker" id="talkTrack">DEVFEST 2026</span><h4 class="modal-title" id="talkModalTitle"></h4></div>
+      <div class="modal-body"><div class="row"><div class="col-sm-4"><div class="talk-person"><div class="talk-avatar" id="talkAvatar">{ }</div><h5 id="talkSpeaker"></h5><p id="talkRole"></p><small id="talkCity"></small></div></div><div class="col-sm-8"><span class="talk-label">О докладе</span><h3 id="talkTitle"></h3><p class="talk-description" id="talkDescription"></p></div></div></div>
+    </div></div>
+  </div>
+
+  <div class="modal fade promo-modal" id="promoModal" tabindex="-1" role="dialog" aria-labelledby="promoModalTitle">
+    <div class="modal-dialog" role="document"><div class="modal-content">
+      <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">×</span></button><span class="modal-kicker">СТУДЕНТАМ · −50%</span><h4 class="modal-title" id="promoModalTitle">Получить промокод</h4></div>
+      <div class="modal-body"><p class="promo-copy">Для всех студентов действует скидка в 50 % на любой билет. Прикрепите документ, подтверждающий статус студента: студенческий билет, зачётную книжку или справку из учебного заведения. После подтверждения промокод придёт на email.</p><form id="promoForm"><div class="form-group"><label for="promoName">Имя и фамилия</label><input class="form-control" id="promoName" required></div><div class="form-group"><label for="promoEmail">Email</label><input type="email" class="form-control" id="promoEmail" required></div><div class="form-group"><label for="promoDoc">Подтверждающий документ</label><input type="file" class="form-control" id="promoDoc" accept="image/*,.pdf" required></div><p class="registration-hint">Форма подготовлена в макете. Подключите endpoint/почту для реальной отправки заявок.</p><button type="submit" class="btn btn-devfest btn-block">Отправить заявку на промокод</button></form></div>
+    </div></div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6"><div class="footer-brand"><span>{</span> ДевФест Астрахань 2026 <span>}</span></div></div>
+        <div class="col-sm-6 footer-right"><a href="#top">Наверх ↑</a><p>ДевФест Астрахань 2026 · GDG Astrakhan</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script src="https://events.nethouse.ru/assets/js/popup-form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
