@@ -63,12 +63,6 @@
   });
 
 
-  // Ticket-level promo button: remember which ticket the user came from.
-  $('.ticket-promo').on('click', function () {
-    var ticket = $(this).data('ticket');
-    $('#promoModalTitle').text('Получить промокод · ' + ticket);
-  });
-
   // Full-width gallery: page dots, working arrows, swipe/scroll, and lightbox.
   var $gallery = $('#photoGallery');
   var $strip = $gallery.find('.gallery-strip');
