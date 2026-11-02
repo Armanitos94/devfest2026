@@ -1309,15 +1309,12 @@ a.hero-fact:focus strong { text-decoration: underline; }
 }
 
 .partner-logo-slot.partner-logo-image {
-  padding: 20px;
   background: var(--white);
   overflow: hidden;
 }
 .partner-logo-slot.partner-logo-image img {
   display: block;
   width: 100%;
-  max-width: 290px;
-  max-height: 88px;
   margin: 0 auto;
   object-fit: contain;
 }
