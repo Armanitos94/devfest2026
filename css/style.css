@@ -2948,44 +2948,179 @@ a.hero-fact:focus strong { text-decoration: underline; }
 }
 
 
-/* Update: edge-to-edge timetable, clear speaker details, aligned modal, community links */
-#schedule .schedule-board { box-sizing:border-box; }
-#schedule .schedule-head { padding:16px 0; }
-#schedule .schedule-head > div { padding-left:17px; padding-right:17px; }
-#schedule .schedule-row { padding:0; width:100%; margin:0; }
-#schedule .schedule-row > div { min-width:0; box-sizing:border-box; }
-#schedule .schedule-row > .time { padding-left:18px; padding-right:10px; }
-#schedule .schedule-row > .slot { padding:21px 18px; }
+/* Program v3 — fill board edge-to-edge and show the speaker's role/company. */
+#schedule .schedule-board { max-width:1080px; margin-right:auto; margin-left:auto; }
+#schedule .schedule-board .schedule-row {
+  margin-left:0; margin-right:0; padding-left:0; padding-right:0;
+  width:100%;
+}
+#schedule .schedule-board .schedule-head {
+  margin:0; width:100%; padding-left:0; padding-right:0;
+}
+#schedule .schedule-board .schedule-row > div,
+#schedule .schedule-board .schedule-head > div {
+  box-sizing:border-box;
+}
+#schedule .schedule-row.talks-row .slot {
+  align-self:stretch;
+  justify-content:center;
+}
+#schedule .schedule-row.talks-row .slot .schedule-slot-top {
+  justify-content:flex-start;
+  margin-bottom:10px;
+}
+#schedule .schedule-row.talks-row .slot .slot-speaker {
+  margin-top:12px;
+  font-size:14px;
+  font-weight:900;
+  color:var(--ink);
+}
+#schedule .schedule-row.talks-row .slot .slot-role {
+  display:block;
+  margin-top:4px;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.38;
+  color:#505963;
+  overflow-wrap:anywhere;
+}
+#schedule .schedule-row .time {
+  padding-left:16px;
+  padding-right:12px;
+}
+#schedule .schedule-head > div { padding-left:16px; }
 #schedule .schedule-row.shared > .col-sm-10 { padding-left:18px; padding-right:18px; }
-#schedule .schedule-row.talks-row .slot { padding:20px 18px; }
-#schedule .schedule-row.talks-row .slot .schedule-slot-top { justify-content:flex-start; margin-bottom:12px; }
-#schedule .schedule-row.talks-row .slot .slot-speaker { display:block; margin-top:12px; font-weight:900; font-size:14px; color:var(--ink); }
-#schedule .schedule-row.talks-row .slot .slot-role { display:block; margin-top:4px; color:#3c4a52; font-size:12px; font-weight:600; line-height:1.45; }
-#schedule .schedule-row.talks-row .slot .slot-role:empty { display:none; }
-.talk-modal .modal-header { display:flex; align-items:center; justify-content:flex-start; text-align:left; width:100%; padding-right:72px; }
-.talk-modal .modal-header .talk-modal-header-meta { display:flex; justify-content:flex-start; align-items:center; gap:10px; flex:1 1 auto; width:auto; margin:0; text-align:left; }
-.talk-modal .modal-header .close { position:absolute; top:50%; right:22px; transform:translateY(-50%); order:0; margin:0; float:none; }
-.devfest-socials-section { background:#d0eff8; padding:65px 0 75px; border-top:3px solid var(--ink); }
-.devfest-socials-inner { display:flex; align-items:center; justify-content:space-between; gap:36px; }
-.devfest-socials-title { margin:15px 0 14px; font-size:clamp(30px,3.5vw,49px); font-weight:900; letter-spacing:-.035em; }
-.devfest-socials-inner p { max-width:520px; font-size:16px; line-height:1.5; }
-.devfest-socials-actions { display:flex; flex-wrap:wrap; gap:15px; }
-.devfest-socials-link { display:inline-flex; align-items:center; gap:13px; white-space:nowrap; color:var(--ink); border:3px solid var(--ink); border-radius:18px; padding:14px 20px; font-size:17px; font-weight:900; box-shadow:6px 6px 0 var(--ink); text-decoration:none; transition:transform .15s,box-shadow .15s; }
-.devfest-socials-link:hover,.devfest-socials-link:focus { color:var(--ink); text-decoration:none; transform:translate(3px,3px); box-shadow:3px 3px 0 var(--ink); }
-.devfest-socials-tg { background:#fbbc04; }
-.devfest-socials-vk { background:#ffffff; }
-.devfest-socials-link .social-icon { display:flex; align-items:center; justify-content:center; width:30px; height:30px; border:2px solid var(--ink); border-radius:9px; background:#fff; font-size:20px; }
-.devfest-socials-link .social-vk { font-size:14px; font-weight:900; }
-@media(max-width:991px) { .devfest-socials-inner { flex-direction:column; align-items:flex-start; gap:18px; } }
-@media(max-width:767px) {
-  #schedule .schedule-row { padding:0; }
-  #schedule .schedule-row > .time { width:100%; padding:13px 15px; }
-  #schedule .schedule-row.talks-row > .slot { width:100%; padding:18px 16px; }
-  #schedule .schedule-row.shared > .col-sm-10 { width:100%; padding:12px 15px 18px; }
-  .talk-modal .modal-header { justify-content:flex-start; padding:14px 60px 14px 17px; }
-  .talk-modal .modal-header .close { right:17px; }
-  .talk-modal .talk-modal-header-meta { gap:7px; }
-  .devfest-socials-section { padding:45px 0 52px; }
-  .devfest-socials-actions { width:100%; flex-direction:column; }
-  .devfest-socials-link { justify-content:space-between; width:100%; }
+
+/* Modal header: labels start at the LEFT; close control stays at right. */
+#talkModal .modal-header.talk-modal-heading {
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  text-align:left;
+  gap:12px;
+}
+#talkModal .talk-modal-header-meta {
+  margin:0;
+  flex:1 1 auto;
+  min-width:0;
+  justify-content:flex-start;
+  text-align:left;
+}
+#talkModal .talk-modal-heading .close {
+  order:0;
+  float:none;
+  flex:0 0 auto;
+  position:static;
+  margin:0 0 0 auto !important;
+  padding:0;
+  line-height:1;
+}
+
+/* Compact social buttons replace the organizer navigation item. */
+.navbar-devfest .navbar-nav > li.nav-channel-item { padding:0 3px; }
+.navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:5px 9px;
+  margin:27px 0 0;
+  border:2px solid var(--ink);
+  border-radius:999px;
+  background:#e4e7ff;
+  color:var(--ink);
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+  line-height:1;
+  box-shadow:2px 2px 0 var(--ink);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel-tg { background:var(--sky); }
+.navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel:hover,
+.navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel:focus {
+  transform:translate(2px,2px);
+  box-shadow:none;
+  background:var(--yellow);
+}
+.navbar-devfest .nav-channel-icon {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--white);
+  border:1px solid var(--ink);
+  border-radius:50%;
+  width:24px;
+  height:24px;
+  font-size:10px;
+  font-weight:950;
+}
+.navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel:after { display:none; }
+@media (min-width:768px) and (max-width:1199px) {
+  .navbar-devfest .navbar-brand .nav-logo { width:175px; }
+  .navbar-devfest .navbar-nav > li > a { padding-left:6px; padding-right:6px; font-size:11px; }
+  .navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel { padding:4px 6px; }
+  .navbar-devfest .nav-channel-text { display:none; }
+}
+@media (max-width:767px) {
+  #schedule .schedule-board .schedule-row { padding-left:0; padding-right:0; }
+  #schedule .schedule-row .time { padding:13px 16px; }
+  #schedule .schedule-row.talks-row .slot { padding:17px 16px; }
+  #schedule .schedule-row.talks-row .slot .slot-role { font-size:12px; }
+  #schedule .schedule-row.shared > .col-sm-10 { padding:4px 16px 16px; }
+  #talkModal .modal-header.talk-modal-heading { gap:8px; }
+  #talkModal .talk-modal-header-meta { gap:6px; }
+  .navbar-devfest .navbar-nav > li.nav-channel-item { display:inline-block; padding:6px 8px 12px 16px; }
+  .navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel { margin:0; padding:7px 12px; font-size:13px; }
+  .navbar-devfest .nav-channel-text { display:inline; }
+}
+
+/* Bootstrap 3's 768px navbar breakpoint is too narrow for these menu items.
+   Switch to the collapsed menu on tablets rather than letting the links wrap. */
+@media (min-width:768px) and (max-width:1199px) {
+  .navbar-devfest .navbar-header { float:none; }
+  .navbar-devfest .navbar-toggle {
+    display:block;
+    margin-top:26px;
+    margin-right:16px;
+  }
+  .navbar-devfest .navbar-brand .nav-logo { width:220px; }
+  .navbar-devfest .navbar-collapse {
+    border-top:2px solid var(--ink);
+    background:var(--white);
+    overflow-y:auto!important;
+    max-height:calc(100vh - 90px);
+    margin-left:-15px;
+    margin-right:-15px;
+  }
+  .navbar-devfest .navbar-collapse.collapse { display:none!important; }
+  .navbar-devfest .navbar-collapse.collapse.in { display:block!important; }
+  .navbar-devfest .navbar-nav,
+  .navbar-devfest .navbar-nav.navbar-right { float:none!important; margin:6px -15px 12px; }
+  .navbar-devfest .navbar-nav > li { float:none; }
+  .navbar-devfest .navbar-nav > li > a { padding:11px 23px; font-size:14px; }
+  .navbar-devfest .navbar-nav > li.nav-channel-item {
+    display:inline-block;
+    padding:9px 6px 14px 23px;
+  }
+  .navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel {
+    margin:0; padding:8px 12px; font-size:13px;
+  }
+  .navbar-devfest .nav-channel-text { display:inline; }
+}
+
+/* Brand marks instead of VK/TG initials in the navigation (v4). */
+.navbar-devfest .nav-brand-logo {
+  display:block;
+  width:26px;
+  height:26px;
+  flex:0 0 26px;
+  object-fit:contain;
+}
+.navbar-devfest .navbar-nav > li.nav-channel-item > a.nav-channel {
+  gap:7px;
+  min-height:37px;
+}
+@media (max-width:767px) {
+  .navbar-devfest .nav-brand-logo { width:28px; height:28px; flex-basis:28px; }
 }
