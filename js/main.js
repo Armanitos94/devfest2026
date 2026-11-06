@@ -46,22 +46,66 @@
   });
 
 
-  // Speaker/talk details: works from both speaker cards and schedule slots.
-  $('.speaker-card[data-talk], .slot[data-talk]').on('click keydown', function (e) {
-    if (e.type === 'keydown' && e.which !== 13 && e.which !== 32) return;
-    if (e.type === 'keydown') { e.preventDefault(); $(this).trigger('click'); return; }
-    var $el = $(this);
-    $('#talkSpeaker').text($el.data('speaker'));
-    $('#talkRole').text($el.data('role'));
-    $('#talkCity').text($el.data('city'));
-    $('#talkTitle').text($el.data('talk'));
-    $('#talkTrack').text($el.data('track-name'));
-    $('#talkDescription').text($el.data('description'));
-    $('#talkModalTitle').text($el.data('speaker'));
-    var initials = String($el.data('speaker') || '').split(' ').map(function (x) { return x.charAt(0); }).slice(0,2).join('');
-    $('#talkAvatar').text(initials || '{ }');
+  // One data source for cards, timetable slots and the modal.
+  // Descriptions are stored only in js/talks-data.js (no duplicated data-* blobs).
+  var talks = window.DEVFEST_TALKS || {};
+  // Keep visible titles and names consistent with the separate data file.
+  // Static HTML remains readable even if JavaScript is disabled.
+  $('.speaker-card[data-talk-id]').each(function () {
+    var talk = talks[$(this).attr('data-talk-id')];
+    if (!talk) return;
+    var trackText = talk.track === 'hard' ? 'Hard Skills' : 'Soft Skills';
+    $(this).find('h3').text(talk.name);
+    $(this).find('p').first().text(talk.role || '');
+    $(this).find('small').first().text(talk.city || '');
+    $(this).find('.speaker-time-sticker').contents().filter(function(){ return this.nodeType === 3; }).last().replaceWith(' ' + talk.start + ' — ' + talk.end);
+    $(this).find('.track').text(trackText)
+      .removeClass('track-hard track-soft').addClass('track-' + talk.track);
+    $(this).find('.speaker-photo img').attr('src', talk.photo).attr('alt', talk.name);
+    $(this).attr('aria-label', 'Подробнее о докладе: ' + talk.name + ' — ' + talk.title);
+    $(this).closest('.speaker-item').attr('data-track', talk.track);
+  });
+  $('.slot[data-talk-id]').each(function () {
+    var talk = talks[$(this).attr('data-talk-id')];
+    if (!talk) return;
+    $(this).find('.schedule-slot-top em').text(talk.track === 'hard' ? 'Hard' : 'Soft');
+    $(this).find('.slot-title').text(talk.title);
+    $(this).find('.slot-speaker').text(talk.name);
+    $(this).find('.slot-role').text(talk.role || '');
+    $(this).removeClass('hard soft').addClass(talk.track);
+    $(this).attr('aria-label', 'Открыть доклад: ' + talk.name + ' — ' + talk.title);
+  });
+  $('.speaker-card[data-talk-id], .slot[data-talk-id]').on('keydown', function (e) {
+    if (e.which !== 13 && e.which !== 32) return;
+    e.preventDefault();
+    $(this).trigger('click');
   });
 
+  $('#talkModal').on('show.bs.modal', function (e) {
+    var id = e.relatedTarget && $(e.relatedTarget).attr('data-talk-id');
+    var talk = talks[id];
+    if (!talk) { e.preventDefault(); return; }
+
+    var trackText = talk.track === 'hard' ? 'Hard Skills' : 'Soft Skills';
+    $('#talkTrack').text(trackText)
+      .removeClass('talk-track-hard talk-track-soft')
+      .addClass('talk-track-' + talk.track);
+    $('#talkModalTime').text('◷ ' + talk.start + ' — ' + talk.end);
+    $('#talkSpeaker').text(talk.name);
+    $('#talkRole').text(talk.role || '');
+    $('#talkCity').text(talk.city || '');
+    $('#talkTitle').text(talk.title);
+    $('#talkPhoto').attr('src', talk.photo).attr('alt', 'Фото: ' + talk.name);
+
+    var $description = $('#talkDescription').empty();
+    (talk.paragraphs || []).forEach(function (paragraph) {
+      $('<p>').text(paragraph).appendTo($description);
+    });
+  });
+
+  $('#talkModal').on('hidden.bs.modal', function () {
+    $('#talkPhoto').attr('src', '').attr('alt', '');
+  });
 
   // Full-width gallery: page dots, working arrows, swipe/scroll, and lightbox.
   var $gallery = $('#photoGallery');

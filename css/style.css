@@ -2824,3 +2824,168 @@ a.hero-fact:focus strong { text-decoration: underline; }
   .hero-v24 { padding-bottom: 42px; }
   #location { padding-bottom: 64px; }
 }
+
+/* Program 2026 — keeps the original schedule-board look, improves clarity on mobile. */
+.speaker-card[data-talk-id], .slot[data-talk-id] { cursor: pointer; }
+.speaker-card[data-talk-id]::after { content: "Подробнее ↗"; display: block; margin: 16px 8px 0; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+.speaker-card:focus-visible, .slot:focus-visible { outline: 4px solid #4285f4; outline-offset: 3px; }
+.schedule-head { font-size: 13px; }
+.schedule-row .time { line-height: 1.12; }
+.schedule-row .time .schedule-time-start { display: block; margin-top: 0; font-size: 22px; color: var(--ink); }
+.schedule-row .time .schedule-time-end { display: block; margin-top: 8px; font-size: 13px; font-weight: 800; color: #5f6368; letter-spacing: 0; }
+.schedule-row .time .schedule-time-end:before { content: "до "; }
+.schedule-row .slot { cursor: pointer; transition: box-shadow .18s ease, background-color .18s ease; }
+.schedule-row .slot:hover, .schedule-row .slot:focus { box-shadow: inset 0 0 0 3px rgba(32,33,36,.72); }
+.schedule-row .slot b { font-size: 15px; line-height: 1.4; }
+.schedule-row .slot span { font-size: 13px; font-weight: 700; color: #394047; }
+.schedule-row.shared > .col-sm-10 { padding-top: 21px; }
+.schedule-intro { margin-top: 35px; }
+/* Full photo and unabridged description. */
+.talk-modal .modal-dialog { max-width: 940px; }
+.talk-modal .modal-content { border-radius: 25px; }
+.talk-modal .modal-header { position: relative; padding: 22px 28px 20px; }
+.talk-modal .modal-header .close { position: relative; z-index: 2; margin-top: 0; font-size: 34px; color: var(--ink); opacity: 1; }
+.talk-modal .modal-title { margin: 12px 0 0; font-size: 23px; font-weight: 900; }
+.talk-modal-track { display: inline-block; padding: 6px 12px; border: 2px solid var(--ink); border-radius: 999px; font-size: 12px; font-weight: 900; text-transform: uppercase; }
+.talk-modal-track.talk-track-hard { background: #d8f4dd; }
+.talk-modal-track.talk-track-soft { background: #e7e6ff; }
+.talk-modal .modal-body { padding: 30px; }
+.talk-person { padding: 12px; border: 3px solid var(--ink); border-radius: 20px; background: #fbbc04; box-shadow: 5px 5px 0 var(--ink); }
+.talk-photo { width: 100%; aspect-ratio: 4 / 4.7; overflow: hidden; border: 2px solid var(--ink); border-radius: 12px; background: #fff; margin-bottom: 15px; }
+.talk-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.talk-person h5 { margin: 0 0 8px; font-size: 23px; line-height: 1.1; }
+.talk-person p { line-height: 1.35; font-size: 14px; }
+.talk-person small { font-size: 12px; font-weight: 800; }
+.talk-modal h3 { margin-top: 15px; overflow-wrap: break-word; }
+.talk-description { font-size: 16px; line-height: 1.65; }
+.talk-description p { margin: 0 0 16px; }
+@media (max-width: 767px) {
+  .schedule-intro { margin-top: 0; margin-bottom: 24px; max-width: none; font-size: 15px; }
+  .schedule-row > div { padding-top: 14px; padding-bottom: 14px; }
+  .schedule-row .time { padding-top: 12px; padding-bottom: 12px; }
+  .schedule-row .time .schedule-time-start, .schedule-row .time .schedule-time-end { display: inline; font-size: 18px; }
+  .schedule-row .time .schedule-time-end { margin-left: 8px; font-size: 15px; }
+  .schedule-row .time .schedule-time-end:before { content: "→ "; }
+  .schedule-row .slot { padding: 16px 15px; }
+  .schedule-row .slot b { font-size: 16px; }
+  .talk-modal .modal-dialog { margin: 10px; }
+  .talk-modal .modal-header { padding: 17px 19px; }
+  .talk-modal .modal-body { padding: 18px; }
+  .talk-modal .modal-title { font-size: 20px; }
+  .talk-modal .talk-person { display: grid; grid-template-columns: 105px 1fr; gap: 0 14px; margin-bottom: 22px; align-items: start; padding: 10px; }
+  .talk-person .talk-photo { grid-row: span 3; width: 105px; aspect-ratio: 3 / 4; margin: 0; }
+  .talk-person h5 { margin: 4px 0; font-size: 18px; }
+  .talk-person p { margin: 0; font-size: 12px; }
+  .talk-person small { font-size: 11px; }
+  .talk-modal h3 { font-size: 25px; }
+  .talk-description { font-size: 15px; line-height: 1.57; }
+}
+@media (max-width: 350px) { .talk-modal .talk-person { display: block; } .talk-person .talk-photo { width: 100%; max-width: 170px; aspect-ratio: 4 / 5; margin-bottom: 12px; } }
+
+
+/* Program refinements — compact board, consistent 40-min talks, readable timestamps. */
+#schedule .schedule-board { max-width: 1080px; margin: 0 auto; }
+#schedule .schedule-head { display:flex; align-items:center; }
+#schedule .schedule-head > div { float:none; }
+#schedule .schedule-row { display:flex; align-items:stretch; }
+#schedule .schedule-row:before, #schedule .schedule-row:after { display:none; }
+#schedule .schedule-row > div { float:none; min-width:0; }
+#schedule .schedule-row .time { display:flex; flex-direction:column; justify-content:center; }
+#schedule .schedule-row .time .schedule-time-start { font-size:20px; line-height:1.15; margin:0; }
+#schedule .schedule-row .time .schedule-time-end { font-size:17px; color:var(--ink); font-weight:900; line-height:1.15; margin:4px 0 0; }
+#schedule .schedule-row .time .schedule-time-end:before { content:"— "; color:#68727a; font-size:16px; }
+#schedule .schedule-row.shared > .col-sm-10 { display:flex; flex-direction:column; justify-content:center; }
+#schedule .schedule-row.shared > .col-sm-10 b { font-size:16px; }
+#schedule .schedule-row.talks-row .slot { display:flex; flex-direction:column; justify-content:center; min-height:142px; padding:18px 17px; }
+#schedule .schedule-row.talks-row .slot.hard { background:#d8f4dd; }
+#schedule .schedule-row.talks-row .slot.soft { background:#e7e6ff; }
+#schedule .schedule-row.talks-row .slot .schedule-slot-top { display:flex; align-items:center; flex-wrap:wrap; justify-content:space-between; gap:8px; margin-bottom:11px; }
+#schedule .schedule-row.talks-row .slot .schedule-slot-top em { margin:0; }
+#schedule .schedule-row.talks-row .slot .schedule-slot-time {
+  display:inline-flex; align-items:center; justify-content:center; gap:4px;
+  margin:0; padding:5px 8px 4px; background:#fff; border:2px solid var(--ink);
+  border-radius:9px; box-shadow:2px 2px 0 rgba(32,33,36,.15); color:var(--ink);
+  font-size:11px; line-height:1.15; font-weight:900; font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+#schedule .schedule-row.talks-row .slot .schedule-clock { display:inline; margin:0; color:var(--ink); font-size:16px; line-height:.8; font-weight:900; }
+#schedule .schedule-row.talks-row .slot b { font-size:16px; line-height:1.3; }
+#schedule .schedule-row.talks-row .slot .slot-speaker { margin-top:10px; font-size:13px; line-height:1.28; }
+#schedule .schedule-row.talks-row .slot:hover, #schedule .schedule-row.talks-row .slot:focus { box-shadow:inset 0 0 0 3px var(--ink); }
+/* These are labels on the existing photo, not a separate CTA. */
+.speaker-photo { position:relative; }
+.speaker-photo .speaker-time-sticker {
+  position:absolute; right:10px; bottom:10px; z-index:2; display:inline-flex; align-items:center;
+  gap:6px; padding:8px 12px; margin:0; background:var(--white); border:2px solid var(--ink);
+  border-radius:12px; box-shadow:4px 4px 0 var(--ink); color:var(--ink); font-size:13px;
+  line-height:1.15; font-weight:950; letter-spacing:0; font-variant-numeric:tabular-nums;
+}
+.speaker-time-clock { font-size:20px; font-weight:900; line-height:.7; }
+.talk-modal .modal-header { display:flex; align-items:center; justify-content:space-between; min-height:74px; padding:17px 26px; }
+.talk-modal .modal-header .close { order:2; margin-left:12px; }
+.talk-modal-header-meta { display:flex; flex-wrap:wrap; align-items:center; gap:9px; }
+.talk-modal-time { display:inline-flex; align-items:center; border:2px solid var(--ink); border-radius:999px; background:var(--white); padding:6px 12px; color:var(--ink); font-size:13px; line-height:1.15; font-weight:900; font-variant-numeric:tabular-nums; }
+@media (min-width:768px) and (max-width:991px) {
+  #schedule .schedule-row.talks-row .slot { padding:15px 12px; }
+  #schedule .schedule-row.talks-row .slot .schedule-slot-top { gap:5px; }
+  #schedule .schedule-row.talks-row .slot .schedule-slot-time { font-size:10px; padding:4px 5px; }
+}
+@media (max-width:767px) {
+  #schedule .schedule-row { display:flex; flex-direction:column; padding:0 12px; }
+  #schedule .schedule-row > div { width:100%; }
+  #schedule .schedule-row .time { flex-direction:row; align-items:center; justify-content:flex-start; gap:7px; padding:13px 4px; }
+  #schedule .schedule-row .time .schedule-time-start { font-size:18px; }
+  #schedule .schedule-row .time .schedule-time-end { display:inline; margin:0; font-size:18px; }
+  #schedule .schedule-row .time .schedule-time-end:before { content:"— "; font-size:18px; }
+  #schedule .schedule-row.talks-row .slot { min-height:0; padding:16px 15px; }
+  #schedule .schedule-row.talks-row .slot .schedule-slot-top { margin-bottom:9px; }
+  #schedule .schedule-row.talks-row .slot .slot-speaker { margin-top:8px; }
+  #schedule .schedule-row.shared > .col-sm-10 { padding:2px 4px 16px; }
+  .speaker-photo .speaker-time-sticker { right:10px; bottom:10px; }
+  .talk-modal .modal-header { padding:13px 18px; min-height:62px; }
+  .talk-modal .modal-header .close { font-size:32px; }
+  .talk-modal-time { font-size:11px; padding:5px 9px; }
+}
+
+
+/* Update: edge-to-edge timetable, clear speaker details, aligned modal, community links */
+#schedule .schedule-board { box-sizing:border-box; }
+#schedule .schedule-head { padding:16px 0; }
+#schedule .schedule-head > div { padding-left:17px; padding-right:17px; }
+#schedule .schedule-row { padding:0; width:100%; margin:0; }
+#schedule .schedule-row > div { min-width:0; box-sizing:border-box; }
+#schedule .schedule-row > .time { padding-left:18px; padding-right:10px; }
+#schedule .schedule-row > .slot { padding:21px 18px; }
+#schedule .schedule-row.shared > .col-sm-10 { padding-left:18px; padding-right:18px; }
+#schedule .schedule-row.talks-row .slot { padding:20px 18px; }
+#schedule .schedule-row.talks-row .slot .schedule-slot-top { justify-content:flex-start; margin-bottom:12px; }
+#schedule .schedule-row.talks-row .slot .slot-speaker { display:block; margin-top:12px; font-weight:900; font-size:14px; color:var(--ink); }
+#schedule .schedule-row.talks-row .slot .slot-role { display:block; margin-top:4px; color:#3c4a52; font-size:12px; font-weight:600; line-height:1.45; }
+#schedule .schedule-row.talks-row .slot .slot-role:empty { display:none; }
+.talk-modal .modal-header { display:flex; align-items:center; justify-content:flex-start; text-align:left; width:100%; padding-right:72px; }
+.talk-modal .modal-header .talk-modal-header-meta { display:flex; justify-content:flex-start; align-items:center; gap:10px; flex:1 1 auto; width:auto; margin:0; text-align:left; }
+.talk-modal .modal-header .close { position:absolute; top:50%; right:22px; transform:translateY(-50%); order:0; margin:0; float:none; }
+.devfest-socials-section { background:#d0eff8; padding:65px 0 75px; border-top:3px solid var(--ink); }
+.devfest-socials-inner { display:flex; align-items:center; justify-content:space-between; gap:36px; }
+.devfest-socials-title { margin:15px 0 14px; font-size:clamp(30px,3.5vw,49px); font-weight:900; letter-spacing:-.035em; }
+.devfest-socials-inner p { max-width:520px; font-size:16px; line-height:1.5; }
+.devfest-socials-actions { display:flex; flex-wrap:wrap; gap:15px; }
+.devfest-socials-link { display:inline-flex; align-items:center; gap:13px; white-space:nowrap; color:var(--ink); border:3px solid var(--ink); border-radius:18px; padding:14px 20px; font-size:17px; font-weight:900; box-shadow:6px 6px 0 var(--ink); text-decoration:none; transition:transform .15s,box-shadow .15s; }
+.devfest-socials-link:hover,.devfest-socials-link:focus { color:var(--ink); text-decoration:none; transform:translate(3px,3px); box-shadow:3px 3px 0 var(--ink); }
+.devfest-socials-tg { background:#fbbc04; }
+.devfest-socials-vk { background:#ffffff; }
+.devfest-socials-link .social-icon { display:flex; align-items:center; justify-content:center; width:30px; height:30px; border:2px solid var(--ink); border-radius:9px; background:#fff; font-size:20px; }
+.devfest-socials-link .social-vk { font-size:14px; font-weight:900; }
+@media(max-width:991px) { .devfest-socials-inner { flex-direction:column; align-items:flex-start; gap:18px; } }
+@media(max-width:767px) {
+  #schedule .schedule-row { padding:0; }
+  #schedule .schedule-row > .time { width:100%; padding:13px 15px; }
+  #schedule .schedule-row.talks-row > .slot { width:100%; padding:18px 16px; }
+  #schedule .schedule-row.shared > .col-sm-10 { width:100%; padding:12px 15px 18px; }
+  .talk-modal .modal-header { justify-content:flex-start; padding:14px 60px 14px 17px; }
+  .talk-modal .modal-header .close { right:17px; }
+  .talk-modal .talk-modal-header-meta { gap:7px; }
+  .devfest-socials-section { padding:45px 0 52px; }
+  .devfest-socials-actions { width:100%; flex-direction:column; }
+  .devfest-socials-link { justify-content:space-between; width:100%; }
+}
