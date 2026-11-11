@@ -54,7 +54,7 @@
   $('.speaker-card[data-talk-id]').each(function () {
     var talk = talks[$(this).attr('data-talk-id')];
     if (!talk) return;
-    var trackText = talk.track === 'hard' ? 'Hard Skills' : 'Soft Skills';
+    var trackText = talk.track === 'hard' ? 'Хард скиллы' : 'Софт скиллы';
     $(this).find('h3').text(talk.name);
     $(this).find('p').first().text(talk.role || '');
     $(this).find('small').first().text(talk.city || '');
@@ -68,7 +68,7 @@
   $('.slot[data-talk-id]').each(function () {
     var talk = talks[$(this).attr('data-talk-id')];
     if (!talk) return;
-    $(this).find('.schedule-slot-top em').text(talk.track === 'hard' ? 'Hard' : 'Soft');
+    $(this).find('.schedule-slot-top em').text(talk.track === 'hard' ? 'Хард скиллы' : 'Софт скиллы');
     $(this).find('.slot-title').text(talk.title);
     $(this).find('.slot-speaker').text(talk.name);
     $(this).find('.slot-role').text(talk.role || '');
@@ -86,7 +86,7 @@
     var talk = talks[id];
     if (!talk) { e.preventDefault(); return; }
 
-    var trackText = talk.track === 'hard' ? 'Hard Skills' : 'Soft Skills';
+    var trackText = talk.track === 'hard' ? 'Хард скиллы' : 'Soft Skills';
     $('#talkTrack').text(trackText)
       .removeClass('talk-track-hard talk-track-soft')
       .addClass('talk-track-' + talk.track);
